@@ -38,7 +38,8 @@
         <td>{{$Araigordai->ig}}</td>
         <td>{{$Araigordai->picture}}</td>
         <td>
-            <button type="button" class="btn btn-warning">Edit</button>
+            <a href="/form/{{$Araigordai->id}}/edit"  class="btn btn-success">edit</a>
+            {{-- <button type="button" class="btn btn-warning">Edit</button> --}}
 
             <form action="/form/{{$Araigordai->id}}" method="POST">
                 @csrf

@@ -53,9 +53,10 @@ class DataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Data $data)
+    public function edit(String $id)
     {
-        //
+        $data = Data::find($id);
+        return view('/edit', compact('data'));
     }
 
     /**
@@ -63,7 +64,15 @@ class DataController extends Controller
      */
     public function update(Request $request, Data $data)
     {
-        //
+        $data = Data::find($id);
+        $data->name = $request->db_name;
+        $data->bdate = $request->db_birthday;
+        $data->ig = $request->db_ig;
+        $data->picture = $request->db_picture;
+
+        $data->save();
+
+        return redirect('/form');
     }
 
     /**
