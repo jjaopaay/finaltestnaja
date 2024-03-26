@@ -62,7 +62,7 @@ class DataController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Data $data)
+    public function update(Request $request, String $id)
     {
         $data = Data::find($id);
         $data->name = $request->db_name;
